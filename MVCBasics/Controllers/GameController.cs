@@ -21,17 +21,16 @@ namespace MVCBasics.Controllers
         [HttpPost]
         public IActionResult GuessingGame(int guess)
         {
+
+
             int num = (int)HttpContext.Session.GetInt32("Number");
 
-            if (guess == 0)
-            {
-                ViewBag.Message = "No guess was made";
-            }
+            if (guess == 0) ViewBag.Message = "You didn't make a guess";
             else if (guess == num)
             {
                 ViewBag.Message = "Congratulations! Your guess was correct.";
             }
-            else if(guess > num)
+            else if (guess > num)
             {
                 ViewBag.Message = "Your guess was too high! Guess again.";
             }
