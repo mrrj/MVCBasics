@@ -10,23 +10,24 @@ namespace MVCBasics.Controllers
     public class GameController : Controller
     {
         Random rand = new Random();
-        int num;
 
         [HttpGet]
         public IActionResult GuessingGame()
         {
-
-            HttpContext.Session.SetInt32("Number", rand.Next(101));
-            num = (int)HttpContext.Session.GetInt32("Number");
-            ViewBag.Message = "The number is " + num;
+            HttpContext.Session.SetInt32("Number", rand.Next(1,101));
             return View();
         }
 
         [HttpPost]
         public IActionResult GuessingGame(int guess)
         {
+            int num = (int)HttpContext.Session.GetInt32("Number");
 
-            if (guess == num)
+            if (guess == 0)
+            {
+                ViewBag.Message = "No guess was made";
+            }
+            else if (guess == num)
             {
                 ViewBag.Message = "Congratulations! Your guess was correct.";
             }

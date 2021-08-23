@@ -18,6 +18,8 @@ namespace MVCBasics
         {
             services.AddMvc();
 
+            services.AddDistributedMemoryCache();
+
             services.AddSession();
         }
 
