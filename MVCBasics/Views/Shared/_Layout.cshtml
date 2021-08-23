@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("About", "About", "Home")
+        @Html.ActionLink("Contact", "Contact", "Home")
+        @Html.ActionLink("Projects", "Projects", "Home")
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>&copyMarja Rolandsson @DateTime.Now.ToShortDateString()</footer>
+</body>
+</html>
