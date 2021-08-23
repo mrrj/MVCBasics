@@ -1,0 +1,18 @@
+﻿@using MVCBasics.Models;
+
+@model Doctor
+
+@{
+    ViewData["Title"] = "Check fever";
+}
+
+<h1>Check Fever</h1>
+
+<p>Please enter your temperature below.</p>
+
+<form asp-action="FeverCheck" method="post">
+    <input type="text" id="temperature" name="temperature" />
+    <input type="submit" value="Submit">
+</form>
+
+<p>@ViewBag.Message</p>
